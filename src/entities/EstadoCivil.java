@@ -1,0 +1,7 @@
+package entities;
+
+public enum EstadoCivil {
+	
+	SOLTERA,SOLTERO,CASADO,CASADA,VIUDO,VIUDA,DIVORCIADO,DIVORCIADA
+
+}
