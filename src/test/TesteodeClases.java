@@ -34,15 +34,20 @@ public static void main(String[] args) {
 	System.out.println(persona2);
 	System.out.println();
 	
+	//TESTEO MATERIA
+	System.out.println("--Clase materia --");
+	Materia m1= new Materia("matematica");
+	m1.muestradatos();
+	System.out.println();
 	
     // TESTEO ESTUDIANTE
 	
 	System.out.println("-- Clase Estudiante-- ");
-	Estudiantes estudiante1=new Estudiantes("Saul","Goodman", 32, 405,EstadoCivil.DIVORCIADO,Materia.BIOLOGIA);
+	Estudiantes estudiante1=new Estudiantes("Saul","Goodman", 32, 405,EstadoCivil.DIVORCIADO,m1);
 	estudiante1.mostrarDatos();;
 	System.out.println();
 	
-	Estudiantes estudiante2=new Estudiantes("Gabriel"," Montoya", 25, 402, EstadoCivil.SOLTERO,Materia.CALCULO);
+	Estudiantes estudiante2=new Estudiantes("Gabriel"," Montoya", 25, 402, EstadoCivil.SOLTERO,m1);
 	estudiante2.mostrarDatos();
 	System.out.println();
 	
@@ -80,9 +85,6 @@ public static void main(String[] args) {
 	
 	Empleados empleado2=new Empleados("Juliana"," Ortiz",500,25,4044,EstadoCivil.CASADA,servicio1,new Date(122,10,21));
 	System.out.println(empleado2);
-	
-	
-	
 	
 	
 }}
