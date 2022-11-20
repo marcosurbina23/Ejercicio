@@ -1,32 +1,23 @@
 package entities;
 
-public class Profesores {
+public class Profesores extends Persona {
 	
 	public String profesor;
 	private Departamento departamento;
 	
-	public Profesores(String profesor, Departamento departamento) {
-		
-		this.profesor = profesor;
-		this.departamento = departamento;
-	}
-
-	@Override
-	public String toString() {
-		return "Profesores [profesor=" + profesor + ", departamento=" + departamento + "]";
-	}
-
-	public Departamento getDepartamento() {
-		return departamento;
-	}
-
-	public void setDepartamento(Departamento departamento) {
+	public Profesores(String nombre, String apellido, int edad, int numIdentificador, EstadoCivil estadoCivil,
+			Departamento departamento) {
+		super(nombre, apellido, edad, numIdentificador, estadoCivil);
 		this.departamento = departamento;
 	}
 	
-	
+   public void mostrarDatos() {
+	   System.out.println(" Nombre:"+getNombre()+" Apellido:"+getApellido()+" Edad: "+getEdad()+ " Numero de indentificador: "+
+       getNumIdentificador()+" Estado Civil: "+getEstadoCivil()+" Departamento asignado:"+departamento);
+   }
 
-	
-	
-
+public void setDepartamento(Departamento departamento) {
+	this.departamento = departamento;
+}
+   
 }

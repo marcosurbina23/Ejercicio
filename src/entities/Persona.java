@@ -2,12 +2,14 @@ package entities;
 
 public class Persona {
 	private String nombre;
+	private String apellido;
 	private int edad;
 	private int numIdentificador;
 	public EstadoCivil estadoCivil;
 	
-	public Persona(String nombre, int edad, int numIdentificador, EstadoCivil estadoCivil) {
+	public Persona(String nombre,String apellido ,int edad, int numIdentificador, EstadoCivil estadoCivil) {
 		
+		this.apellido= apellido;
 		this.nombre = nombre;
 		this.edad = edad;
 		this.numIdentificador = numIdentificador;
@@ -15,6 +17,9 @@ public class Persona {
 	}
 
 
+	public String getApellido() {
+		return apellido;
+	}
 	public String getNombre() {
 		return nombre;
 	}
@@ -41,7 +46,7 @@ public class Persona {
 
 	@Override
 	public String toString() {
-		return "Persona [nombre=" + nombre + ", edad=" + edad + ", numIdentificador=" + numIdentificador
+		return "Persona [nombre=" + nombre + ",apellido= "+ apellido + ", edad=" + edad + ", numIdentificador=" + numIdentificador
 				+ ", estadoCivil=" + estadoCivil + "]";
 	}
 

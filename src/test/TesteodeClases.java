@@ -1,5 +1,7 @@
 package test;
 
+import java.util.Date;
+
 import entities.Departamento;
 import entities.Empleados;
 import entities.EstadoCivil;
@@ -16,14 +18,14 @@ public static void main(String[] args) {
 	// TESTEO CLASE PERSONA 
 	
 	System.out.println("-- Clase Persona-- ");
-	Persona persona1=new Persona(" Marcos",25,01,EstadoCivil.CASADO);
+	Persona persona1=new Persona(" Marcos","Sarmiento",25,01,EstadoCivil.CASADO);
 	System.out.println(persona1);
 	System.out.println();
 	
 	//TESTEO CLASE PERSONA 2 CAMBIO DE ESTADO CIVIL
 	
-	System.out.println("-- Clase persona2 -- ");
-	Persona persona2=new Persona(" Paula", 24, 16,EstadoCivil.CASADA);
+	System.out.println("-- Clase persona2 CAMBIO DE ESTADO CIVIL-- ");
+	Persona persona2=new Persona(" Paula","Perez", 24, 16,EstadoCivil.CASADA);
 	System.out.println(persona2);
 	System.out.println();
 	
@@ -36,51 +38,50 @@ public static void main(String[] args) {
     // TESTEO ESTUDIANTE
 	
 	System.out.println("-- Clase Estudiante-- ");
-	Estudiantes estudiante1=new Estudiantes(Materia.FISICA,persona1);
-	System.out.println(estudiante1);
+	Estudiantes estudiante1=new Estudiantes("Saul","Goodman", 32, 405,EstadoCivil.DIVORCIADO,Materia.BIOLOGIA);
+	estudiante1.mostrarDatos();;
 	System.out.println();
 	
-	Estudiantes estudiante2=new Estudiantes(Materia.MATEMATICA,new Persona(" Daniela", 24, 16,EstadoCivil.VIUDA));
-	System.out.println(estudiante2);
+	Estudiantes estudiante2=new Estudiantes("Gabriel"," Montoya", 25, 402, EstadoCivil.SOLTERO,Materia.CALCULO);
+	estudiante2.mostrarDatos();
 	System.out.println();
 	
 	// TESTEO PROFESOR
 	System.out.println("-- Clase Profesor-- ");
-	Profesores profesor1=new Profesores(" Erick",Departamento.INGENIERIAS);
-	System.out.println(profesor1);
+	Profesores profesor1=new Profesores("Erick"," Martininez", 24,401,EstadoCivil.SOLTERO,Departamento.INGENIERIAS);
+	profesor1.mostrarDatos();
 	System.out.println();
 	
 	// CAMBIO DE MATERIA PROFESOR
-	profesor1.setDepartamento(Departamento.ECONOMICAS);;
-	System.out.println(profesor1);
+	profesor1.setDepartamento(Departamento.ECONOMICAS);
+	profesor1.mostrarDatos();
 	System.out.println();
 	
 	//TESTEO SERVICIO
 	
 	System.out.println("-- Clase Persona de Servicio-- ");
-	Servicio servicio1=new Servicio(new Persona( " Juan", 32, 41,EstadoCivil.DIVORCIADO),Lugardetrabajo.GYM);
-	System.out.println(servicio1);
+	Servicio servicio1=new Servicio(" Julian "," Ramirez", 45, 208,EstadoCivil.DIVORCIADO,Lugardetrabajo.BIBLIOTECA);
+	servicio1.mostrarDatos();;
 	System.out.println();
 	
 	//CAMBIO DE LUGAR DE TRABAJO
 	
-	Servicio servicio2=new Servicio(new Persona(" Rodrigo", 24, 52,EstadoCivil.CASADO),Lugardetrabajo.SECRETARIA);
-	System.out.println(servicio2);
+	Servicio servicio2=new Servicio(" Paola"," Montero", 23, 201,EstadoCivil.DIVORCIADA,Lugardetrabajo.PATIO);
+	servicio2.mostrarDatos();
 	servicio2.setLugardetrabajo(Lugardetrabajo.BIBLIOTECA);
 	System.out.println();
 	
 	// TESTEO EMPLEADO
 	System.out.println("-- Clase Empleado-- ");
-	Empleados empleado1=new Empleados(2015,401,profesor1);
+	
+	Empleados empleado1=new Empleados(" Daniel" , " Ortega",201,45,201,EstadoCivil.CASADO,profesor1,new Date(116,5,3));
 	System.out.println(empleado1);
 	System.out.println();
 	
-	Empleados empleado2=new Empleados(2015,404,servicio1);
+	Empleados empleado2=new Empleados("Juliana"," Ortiz",500,25,4044,EstadoCivil.CASADA,servicio1,new Date(122,10,21));
 	System.out.println(empleado2);
-	System.out.println();
 	
-	Empleados empleado3=new Empleados(new Persona(" Andrea",56, 201,EstadoCivil.VIUDA),2015,201," Secretaria");
-	System.out.println(empleado3);
+	
 	
 	
 	
